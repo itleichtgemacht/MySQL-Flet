@@ -7,7 +7,7 @@
 
 import base64
 
-message = 'ArmLeicht48#'
+message = 'Tester12345#'
 message = input('Welcher Text soll verschlüsselt werden? ')
 
 print('Folgender Text wird verschlüsselt: ', message)
