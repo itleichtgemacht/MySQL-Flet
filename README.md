@@ -2,10 +2,15 @@
 
 > [!NOTE]
 > In diesem Beispiel wird folgendes behandelt:
+
 > - MySQL - **C**reate**R**ead**U**pdate**D**elete
+
 > - Flet Framework
+
 > - ResponsiveRow
+
 > - NavigationsBar
+
 
 > [!NOTE]
 > Links zu offiziellen Dokumentationen
