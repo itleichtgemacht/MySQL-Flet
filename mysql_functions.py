@@ -96,6 +96,26 @@ def update_by_id(id, title, isbn):
         raise e
 
 
+def delete_by_id(id):
+    args = (id,0)
+    print(f"delete_by_id: {id}")
+    try:
+        # Read database configuration from the config file
+        config = read_config()
+
+        # Establish a connection to the MySQL database
+        with MySQLConnection(**config) as conn:
+            # Create a cursor to execute SQL queries
+            with conn.cursor() as cursor:
+                # Call the stored procedure 'find_by_isbn'
+                cursor.callproc('delete_by_id',args)
+                conn.commit()
+
+    except Error as e:
+        print(e)
+        raise e
+
+
 
 
 def find_all_books():

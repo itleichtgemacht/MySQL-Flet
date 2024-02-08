@@ -122,7 +122,8 @@ def testerseite2View(page):
     def btnNeueZeile(e):
         formEdit.visible=True
         print("btnNeueZeile: on_click")
-        #formEdit.update()
+        tbID.value='0'
+        page.update()
             
     def btnUpdateRow(e):
         print(f"{tbID.value} {tbTitel.value} {tbISBN.value}")
@@ -130,15 +131,21 @@ def testerseite2View(page):
         tbID.value=""
         tbTitel.value=""
         tbISBN.value=""
-        
+    
+
+    def btnRefreschZeile(e):
+        tbID.value=""
+        tbTitel.value=""
+        tbISBN.value=""
+        page.update()
 
 
     formEdit =  ft.ResponsiveRow(
                     [
                         ft.Container(ft.Row([
                                             ft.IconButton("ADD", icon_color="green", tooltip="Daten hinzufügen", on_click=btnNeueZeile),
-                                            ft.IconButton("EDIT", icon_color="green", tooltip="Änderungen übernehmen", on_click=btnUpdateRow),
-                                            ft.IconButton("REFRESH", icon_color="green", tooltip="Änderungen verwerfen"),
+                                            ft.IconButton("EDIT", icon_color="green", tooltip="Änderungen übernehmen (Neu bzw. Ändern)", on_click=btnUpdateRow),
+                                            ft.IconButton("REFRESH", icon_color="green", tooltip="Änderungen verwerfen", on_click=btnRefreschZeile),
                                         ]),
                                         padding=5,
                                         bgcolor="Green100",
@@ -185,6 +192,16 @@ def testerseite2View(page):
                 
                 page.update()
 
+
+    def btnDeleteRow(e,d):
+        data = mf.find_by_id(e)
+        for row in data:
+            for spalten in row:
+                tbID.value=spalten[0]
+                tbTitel.value=spalten[1]
+                tbISBN.value=spalten[2]
+                page.update()
+        mf.delete_by_id(tbID.value)
        
     def loadRows(daten):
         __datas = daten
@@ -199,13 +216,18 @@ def testerseite2View(page):
                                         on_click=functools.partial(btnEditRow, spalten[0]),
                                     )
                 
+                delBtn = ft.IconButton("DELETE", icon_color="red", 
+                                        tooltip="Daten löschen", 
+                                        on_click=functools.partial(btnDeleteRow, spalten[0]),
+                                    )
+                
                 
                 tblRow = ft.ResponsiveRow(
                     [
                         ft.Container(ft.Row([
                                             edBtn,
-                                            #ft.Text(spalten[0]),
-                                            ft.IconButton("DELETE", icon_color="red", tooltip="Zeile löschen"),
+                                            delBtn,
+                                           
                                         ], 
                                             #vertical_alignment=ft.CrossAxisAlignment.CENTER,
                                         ),
