@@ -1,8 +1,14 @@
-MySQL CRUD Flet-Projekt
-=======================
+# MySQL CRUD Flet-Projekt
 
-Python Allgemein
-================
+> [!NOTE]
+> In diesem Beispiel wird folgendes behandelt:
+> - MySQL - **C**reate**R**ead**U**pdate**D**elete
+> - Flet Framework
+> - ResponsiveRow
+> - NavigationsBar
+ 
+# Python Allgemein
+
 Ggf. "pip" aktualisieren
 [shell] py -m pip install --upgrade pip
 
@@ -10,35 +16,44 @@ Version von pip prüfen
 [shell] py -m pip --version
 
 
-Flet Projekt
-============
-Virtuelle Umgebung erstellen
-[shell] pip install pipenv
+# Flet Projekt
 
-Virtuelle Umgebung wird unter: C:\Users\[UserName]]\.virtualenvs\... erstellt
+* Virtuelle Umgebung erstellen
+  
+  [shell] pip install pipenv
 
-Virtuelle Umgebung aktivieren und Virtuellen Namen anzeigen lassen
---> (Achtung nach Start von VS Code immer darauf achten, dass man in der richtigen Virtuellen Umgebung ist!)
+  Virtuelle Umgebung wird unter: C:\Users\[UserName]]\.virtualenvs\... erstellt
 
-[shell] pipenv shell
-    es erscheint nun in der cmd: "(MySQL-Flet-...) [Pfad zum Projektverzeichnis]\MySQL-Flet"
+* Virtuelle Umgebung aktivieren und Virtuellen Namen anzeigen lassen
+  ** Achtung nach Start von VS Code immer darauf achten, dass man in der richtigen Virtuellen Umgebung ist! **
+
+  [shell] pipenv shell
+
+  es erscheint nun in der cmd: "(MySQL-Flet-...) [Pfad zum Projektverzeichnis]\MySQL-Flet"
+
+* Python Pakete, die in diesem Projekt verwendet werden
 
 Flet, MySQL Connector, Base64 in der Virtuellen Umgebung installieren
+
 [shell] pipenv install flet
+
 [shell] pipenv install mysql-connector-python
+
 [shell] pipenv install pybase64
 
 
-Starten des Entwicklungsservers mit automatischer Aktualisierung der App bei Änderungen
+* Starten des Entwicklungsservers mit automatischer Aktualisierung der App bei Änderungen
+* 
 [shell] flet run -r main.py
 
+<!--
 Allgemeines zu git
 ==================
 https://boolie.org/git-github-anfaenger-tutorial/
+-->
 
+# MySQL Stored Procedure
 
-MySQL Stored Procedure
-======================
 
 CREATE PROCEDURE `update_by_id`(
 	IN p_id INT, p_title VARCHAR(255), p_isbn VARCHAR(100)
