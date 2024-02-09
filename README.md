@@ -52,8 +52,9 @@ Flet, MySQL Connector, Base64 in der Virtuellen Umgebung installieren
 ```
 
 * Starten des Entwicklungsservers mit automatischer Aktualisierung der App bei Änderungen
-* 
+```Shell
 [shell] flet run -r main.py
+```
 
 <!--
 Allgemeines zu git
