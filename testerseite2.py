@@ -18,8 +18,6 @@
 
 
 import flet as ft
-#import os
-#from mysql.connector import MySQLConnection, Error
 import mysql_functions as mf
 import functools
 
