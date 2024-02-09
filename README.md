@@ -8,12 +8,11 @@
 > - NavigationsBar
 
 
-> [!NOTE]
-| Links zu offiziellen Dokumentationen                                             |
+| Dokumentationen       |  Link                                                    |
 | --------------------- | -------------------------------------------------------- |
 | Flet - Controls:      | https://flet.dev/docs/controls/                          |
 | Flet - Icon Browser:  | https://gallery.flet.dev/icons-browser/                  |
-| MySQL Server:		    | https://dev.mysql.com/doc/refman/8.3/en/installing.html  |
+| MySQL Server:		| https://dev.mysql.com/doc/refman/8.3/en/installing.html  |
 
  
 # Python Allgemein
@@ -63,7 +62,7 @@ https://boolie.org/git-github-anfaenger-tutorial/
 
 # MySQL Stored Procedure
 
-'''MySQL
+```MySQL
 CREATE PROCEDURE `update_by_id`(
 	IN p_id INT, p_title VARCHAR(255), p_isbn VARCHAR(100)
 )
@@ -111,4 +110,4 @@ BEGIN
 		ON book_author.author_id = authors.id
 	ORDER BY title;
 END
-'''
+```

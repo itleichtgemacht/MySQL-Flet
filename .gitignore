@@ -1,0 +1,5 @@
+# ### AH
+# Folgende Verzeichnisse ignorieren:
+#   https://www.atlassian.com/de/git/tutorials/saving-changes/gitignore
+# ###
+__pycache__\
