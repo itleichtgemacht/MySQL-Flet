@@ -17,38 +17,39 @@
  
 # Python Allgemein
 
-Ggf. "pip" aktualisieren
+pip aktualisieren, Version prüfen
+```Shell
 [shell] py -m pip install --upgrade pip
-
-Version von pip prüfen
 [shell] py -m pip --version
-
+```
 
 # Flet Projekt
 
 * Virtuelle Umgebung erstellen
-  
+```Shell  
   [shell] pip install pipenv
+```
 
   Virtuelle Umgebung wird unter: C:\Users\[UserName]]\.virtualenvs\... erstellt
 
 * Virtuelle Umgebung aktivieren und Virtuellen Namen anzeigen lassen
   ** Achtung nach Start von VS Code immer darauf achten, dass man in der richtigen Virtuellen Umgebung ist! **
-
+```Shell
   [shell] pipenv shell
-
+```
   es erscheint nun in der cmd: "(MySQL-Flet-...) [Pfad zum Projektverzeichnis]\MySQL-Flet"
 
 * Python Pakete, die in diesem Projekt verwendet werden
 
 Flet, MySQL Connector, Base64 in der Virtuellen Umgebung installieren
 
+```Shell
 [shell] pipenv install flet
 
 [shell] pipenv install mysql-connector-python
 
 [shell] pipenv install pybase64
-
+```
 
 * Starten des Entwicklungsservers mit automatischer Aktualisierung der App bei Änderungen
 * 
