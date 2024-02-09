@@ -45,9 +45,7 @@ Flet, MySQL Connector, Base64 in der Virtuellen Umgebung installieren
 
 ```Shell
 [shell] pipenv install flet
-
 [shell] pipenv install mysql-connector-python
-
 [shell] pipenv install pybase64
 ```
 
