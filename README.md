@@ -9,11 +9,11 @@
 
 
 > [!NOTE]
-> | Links zu offiziellen Dokumentationen                                             |
-> | --------------------- | -------------------------------------------------------- |
-> | Flet - Controls:	  |	https://flet.dev/docs/controls/                          |
-> | Flet - Icon Browser:  |	https://gallery.flet.dev/icons-browser/                  |
-> | MySQL Server:		  |	https://dev.mysql.com/doc/refman/8.3/en/installing.html  |
+| Links zu offiziellen Dokumentationen                                             |
+| --------------------- | -------------------------------------------------------- |
+| Flet - Controls:      | https://flet.dev/docs/controls/                          |
+| Flet - Icon Browser:  | https://gallery.flet.dev/icons-browser/                  |
+| MySQL Server:		    | https://dev.mysql.com/doc/refman/8.3/en/installing.html  |
 
  
 # Python Allgemein
