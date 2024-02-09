@@ -63,7 +63,7 @@ https://boolie.org/git-github-anfaenger-tutorial/
 
 # MySQL Stored Procedure
 
-```
+'''MySQL
 CREATE PROCEDURE `update_by_id`(
 	IN p_id INT, p_title VARCHAR(255), p_isbn VARCHAR(100)
 )
@@ -111,4 +111,4 @@ BEGIN
 		ON book_author.author_id = authors.id
 	ORDER BY title;
 END
-```
+'''
