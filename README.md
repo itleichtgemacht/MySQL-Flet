@@ -2,22 +2,22 @@
 
 > [!NOTE]
 > In diesem Beispiel wird folgendes behandelt:
+>
 > - MySQL - **C**reate**R**ead**U**pdate**D**elete
 > - Flet Framework
 > - ResponsiveRow
 > - NavigationsBar
 
+| Dokumentationen      | Link                                                    |
+| -------------------- | ------------------------------------------------------- |
+| Flet - Controls:     | https://flet.dev/docs/controls/                         |
+| Flet - Icon Browser: | https://gallery.flet.dev/icons-browser/                 |
+| MySQL Server:        | https://dev.mysql.com/doc/refman/8.3/en/installing.html |
 
-| Dokumentationen       |  Link                                                    |
-| --------------------- | -------------------------------------------------------- |
-| Flet - Controls:      | https://flet.dev/docs/controls/                          |
-| Flet - Icon Browser:  | https://gallery.flet.dev/icons-browser/                  |
-| MySQL Server:		| https://dev.mysql.com/doc/refman/8.3/en/installing.html  |
-
- 
 # Python Allgemein
 
 pip aktualisieren, Version prüfen
+
 ```Shell
 [shell] py -m pip install --upgrade pip
 [shell] py -m pip --version
@@ -25,21 +25,24 @@ pip aktualisieren, Version prüfen
 
 # Flet Projekt
 
-* Virtuelle Umgebung erstellen
-```Shell  
+- Virtuelle Umgebung erstellen
+
+```Shell
   [shell] pip install pipenv
 ```
 
-  Virtuelle Umgebung wird unter: C:\Users\[UserName]]\.virtualenvs\... erstellt
+Virtuelle Umgebung wird unter: C:\Users\[UserName]]\.virtualenvs\... erstellt
 
-* Virtuelle Umgebung aktivieren und Virtuellen Namen anzeigen lassen
+- Virtuelle Umgebung aktivieren und Virtuellen Namen anzeigen lassen
   ** Achtung nach Start von VS Code immer darauf achten, dass man in der richtigen Virtuellen Umgebung ist! **
+
 ```Shell
   [shell] pipenv shell
 ```
-  es erscheint nun in der cmd: "(MySQL-Flet-...) [Pfad zum Projektverzeichnis]\MySQL-Flet"
 
-* Python Pakete, die in diesem Projekt verwendet werden
+es erscheint nun in der cmd: "(MySQL-Flet-...) [Pfad zum Projektverzeichnis]\MySQL-Flet"
+
+- Python Pakete, die in diesem Projekt verwendet werden
 
 Flet, MySQL Connector, Base64 in der Virtuellen Umgebung installieren
 
@@ -49,7 +52,8 @@ Flet, MySQL Connector, Base64 in der Virtuellen Umgebung installieren
 [shell] pipenv install pybase64
 ```
 
-* Starten des Entwicklungsservers mit automatischer Aktualisierung der App bei Änderungen
+- Starten des Entwicklungsservers mit automatischer Aktualisierung der App bei Änderungen
+
 ```Shell
 [shell] flet run -r main.py
 ```
@@ -58,6 +62,21 @@ Flet, MySQL Connector, Base64 in der Virtuellen Umgebung installieren
 Allgemeines zu git
 ==================
 https://boolie.org/git-github-anfaenger-tutorial/
+https://docs.github.com/de/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks
+
+Allgemeines zu Python MySQL
+===========================
+https://www.mysqltutorial.org/python-mysql/getting-started-mysql-python-connector/
+
+Allgemeines zu MySQL - Dokumentation
+====================================
+https://dev.mysql.com/doc/refman/8.3/en/sql-statements.html
+
+
+HTML nach PDF OpenSource
+	https://plainenglish.io/blog/best-python-libraries-to-write-reports-to-pdf-87771be815c9
+https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#quickstart
+
 -->
 
 # MySQL Stored Procedure
@@ -80,11 +99,11 @@ CREATE PROCEDURE `find_by_id`(
     OUT  p_title VARCHAR(255), p_isbn VARCHAR(255)
 )
 BEGIN
-	SELECT 
+	SELECT
 			id,
-			title, 
+			title,
 			isbn
-	FROM books 
+	FROM books
 	WHERE id = p_id;
 END
 
@@ -98,13 +117,13 @@ END
 
 CREATE PROCEDURE `find_all`()
 BEGIN
-	SELECT 
+	SELECT
 		books.id,
-		title, 
-		isbn, 
+		title,
+		isbn,
         CONCAT(first_name,' ',last_name) AS author
 	FROM books
-	INNER JOIN book_author 
+	INNER JOIN book_author
 		ON book_author.book_id =  books.id
 	INNER JOIN authors
 		ON book_author.author_id = authors.id
